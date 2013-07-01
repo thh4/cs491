@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html> 
+<head> 
+  <title>Flights</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+
+</head> 
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script src="jquery.js"></script>
+	
+	<!-- added-->
+		<link rel="stylesheet" href="css/style.css">
+
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script src="js/incrementing.js"></script>
+
+
+<script>
+
+function test( p )
+{
+	var w = document.getElementById( p ).value
+	
+	if (w == 'OneWay')
+	{
+	document.getElementById('OneWay').style.display = "block";
+	document.getElementById('RoundTrip').style.display = "none";
+
+	}
+	else
+	{
+	document.getElementById('OneWay').style.display = "none";
+	document.getElementById('RoundTrip').style.display = "block";
+	
+	}
+	
+}
+
+</script>
+<style>
+  .body{
+   /* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #00A3EF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to top, #FFFFFF 0%, #00A3EF 100%);
+ }
+</style>
+<body> 
+
+<div data-role="page" id="page1">
+	<div data-role="header">
+		<h1>One Way</h1>
+		<div  data-role="navbar">
+		
+			<ul>
+			
+				<li>
+					<a href="#page1"                 data-icon="search"   data-theme="b" 
+					                                 class = "ui-btn-active"  	       > One Way </a>
+				</li>
+			
+				<li>
+					<a href="#page2"                 data-icon="search"   data-theme="b" > Round Trip </a>
+				</li>
+							
+				
+			</ul>
+			
+		</div>
+	</div>
+	<!--
+	<input type=button name="OneWay"  id="OneWay" value="OneWay" onclick="test(id)" >
+	<input type=button name="RoundTrip"  id="RoundTrip" value="RoundTrip" onclick="test(id)" >
+	-->
+	 <div id ='OneWay' style="display: block" class="body">
+			<label for="start"><font color="black" size=4><b>Origin <br> Airport or City:</font></b></label>
+			<input type="search" name="start" id="start"  placeholder="" value="">
+			<br>
+			<br>
+			
+			<label for="end"><font color="black" size=4><b>Destination <br> Airport or City:</b></font></label>
+			<input type="search" name="end" id="end" placeholder="" value="">
+			<br>
+			<br>
+			
+			<label for="startDate"><font color="black" size=4><b>Departure Date:</b></font></label>
+			<input type="date" name="startdate" id="startdate">
+			<br>
+			<br>
+			
+	 <div class="numbers-row">
+        <label for="french-hens"><font color="black" size=4><b>Adult(s)</b></font></label>
+        <input type="text" name="french-hens" id="french-hens" value="1">
+      </div>
+    <br>
+	<br>
+     <div class="numbers-row">
+        <label for="turtle-doves"><font color="black" size=4><b>Children(s)</b></font></label>
+        <input type="text" name="turtle-doves" id="turtle-doves" value="0">
+     </div>
+     <br>
+	 <br>
+	 <div class="numbers-row">
+        <label for="partridge"><font color="black" size=4><b>Senior(s)</b></font></label>
+        <input type="text" name="partridge" id="partridge" value="0">
+     </div>
+
+			<br>
+			<br>
+			
+			<select id="typeofticket" name="typeofticket">
+                <option value="option1">
+                    <font color="black" size=4>Economy</font>
+                </option>
+				<option value="option2">
+                    Premium Economy
+                </option>
+                <option value="option3">
+                    Business
+                </option>
+				<option value="option4">
+                    FirstClass
+                </option>
+            </select>
+			<br>
+			<br>
+			<input type="submit" id="submit"  value="Search" data-theme="a">
+	
+	</div>
+	
+	<div data-role="footer" id="footer" class="footer">	
+	
+	  
+	</div>
+
+   
+
+</div>
+
+<div data-role="page" id="page2">
+<div data-role="header">
+		<h1>Round Trip</h1>
+		<div  data-role="navbar">
+		
+			<ul>
+			
+				<li>
+					<a href="#page1"    	data-icon="search"  data-theme="b" >One Way </a>
+				</li>
+			
+				<li>
+					<a href="#page2"    	data-icon="search"  data-theme="b" > Round Trip </a>
+				</li>			
+				
+			</ul>
+		
+		</div>
+</div>
+
+
+		<div data-role="content">	
+			
+	<div id ='RoundTrip' style="display: block" class="body" >
+			<label for="start2"><font color="black" size=4><b>Origin <br> Airport or City:</font></b></label>
+			<input type="search" name="start2" id="start2"  placeholder="" value="">
+			<br>
+			<br>
+			
+			<label for="end2"><font color="black" size=4><b>Destination <br>Airport or City:</font></b></label>
+			<input type="search" name="end2" id="end2" placeholder="" value="">
+			<br>
+			<br>
+			
+			<label for="startDate2"><font color="black" size=4><b>Departure Date:</b></font></label>
+			<input type="date" name="startdate2" id="startdate2">
+			<br>
+			<br>
+			
+			<label for="endDate2"><font color="black" size=4><b>Return Date:</b></font></label>
+			<input type="date" name="enddate2" id="enddate2">
+			<br>
+			<br>
+			
+	
+	 <div class="numbers-row">
+        <label for="name"><font color="black" size=4><b>Adult(s)</b></font></label>
+        <input type="text" name="french-hens" id="french-hens" value="1">
+      </div>
+    <br>
+	<br>
+     <div class="numbers-row">
+        <label for="name"><font color="black" size=4><b>Children(s)</b></font></label>
+        <input type="text" name="turtle-doves" id="turtle-doves" value="0">
+     </div>
+     <br>
+	 <br>
+	 <div class="numbers-row">
+        <label for="name"><font color="black" size=4><b>Senior(s)</b></font></label>
+        <input type="text" name="partridge" id="partridge" value="0">
+     </div>
+
+			<br>
+			<br>
+			
+			<select id="typeofticket2" name="typeofticket2">
+                <option value="option12">
+                    Economy
+                </option>
+				<option value="option22">
+                    Premium Economy
+                </option>
+                <option value="option32">
+                    Business
+                </option>
+				<option value="option42">
+                    FirstClass
+                </option>
+            </select>
+			<br>
+			<br>
+			<input type="submit" id="submit2"  value="Search" data-theme="a">
+	
+	</div>
+	
+			<!--<a href="#page1"  > Go back to Page 1 </a>-->
+		</div>
+	
+		<footer data-role="footer" class="ui-bar">
+			
+		</footer>
+	
+</div>
+
+</body>
+</html>
